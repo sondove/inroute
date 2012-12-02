@@ -1,11 +1,24 @@
-inroute
-=======
-
-Simple shell wrapper for inotifywait
+#inroute
+Simple shell wrapper for [inotifywait] (https://github.com/rvoicilas/inotify-tools)
 
 
-use 
---
+#Use 
+
+Take as first argument the folder to watch. Currently only listents to modify,moved _ to,create events but this can be modified in the script.
+
+The script also contains an array of regex -> command bindings. This is just a long bash array where every two elements are trated as the regex -> command pair.
+
+I'm sure there are potential for incorrect shell escapes so be very careful if using this for removing or moving files.
+
+
+##Example
+See below for an example run using the the following command in the testdir folder: 
+
+"input":
+    touch testfile.txt;sleep 1;echo "A" > testfile.txt;sleep 1;mv testfile.txt testfile2.txt
+
+
+output:
     sondove@atlas:(master)~/projects/inroute$ ./inroute.sh testdir/
     ./inroute.sh listening for modify,moved_to,create on testdir/
     
