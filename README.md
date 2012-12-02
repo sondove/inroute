@@ -12,13 +12,9 @@ I'm sure there are potential for incorrect shell escapes so be very careful if u
 
 
 ##Example
-See below for an example run using the the following command in the testdir folder: 
-
-"input":
-    touch testfile.txt;sleep 1;echo "A" > testfile.txt;sleep 1;mv testfile.txt testfile2.txt
+See below for an example run using the the following command in the testdir folder: `touch testfile.txt;sleep 1;echo "A" > testfile.txt;sleep 1;mv testfile.txt testfile2.txt`
 
 
-output:
     sondove@atlas:(master)~/projects/inroute$ ./inroute.sh testdir/
     ./inroute.sh listening for modify,moved_to,create on testdir/
     
